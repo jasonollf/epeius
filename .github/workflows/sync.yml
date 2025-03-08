@@ -5,7 +5,7 @@ permissions:
 
 on:
   schedule:
-    - cron: "0 0 * * *" # every day
+    - cron: '0 12 1 * *'  # 每月 1 号 UTC 时间 12:00 触发
   workflow_dispatch:
   watch:
     types: started
