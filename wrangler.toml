@@ -1,4 +1,4 @@
-name = "tr"
+name = "t0r"
 main = "_worker.js"
 compatibility_date = "2025-08-07"
 keep_vars = true
@@ -6,3 +6,4 @@ keep_vars = true
 [[kv_namespaces]]
 binding = "KV"
 id = "f13f2d22170e4ddaa4d52710269e5bef"
+
