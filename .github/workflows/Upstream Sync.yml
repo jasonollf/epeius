@@ -34,6 +34,15 @@ jobs:
           # Set test_mode true to run tests instead of the true action!!
           test_mode: false
 
+      # Step 3: 保留本地 wrangler.toml
+      - name: Keep local wrangler.toml
+        if: steps.sync.outcome == 'success'
+        run: |
+          git checkout --ours wrangler.toml || echo "No local wrangler.toml to keep"
+          git add wrangler.toml
+          git commit -m "Preserve local wrangler.toml" || echo "No changes in wrangler.toml"
+
+      # Step 4: Sync check
       - name: Sync check
         if: failure()
         run: |
